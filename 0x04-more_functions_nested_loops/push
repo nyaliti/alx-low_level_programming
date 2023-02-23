@@ -1,0 +1,2 @@
+#!/bin/bash
+git add . && git commit -m'<h4> Bryson commited</h4>' && git push

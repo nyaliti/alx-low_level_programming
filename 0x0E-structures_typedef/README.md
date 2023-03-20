@@ -10,4 +10,4 @@
 <li>You are allowed to use the standard library</li>
 <li>If an element of `d` is `NULL`, print `(nil)` instead of this element. (if `name` is `NULL`, print `Name: (nil)`)</li>
 <li>If `d` is `NULL` print nothing.</li>
-</ul>|<a href="https://github.com/nyaliti/alx-low_level_programming/blob/main/0x0E-structures_typedef/2-print_dog.c">View Code</a>|
+</ul> | <a href="https://github.com/nyaliti/alx-low_level_programming/blob/main/0x0E-structures_typedef/2-print_dog.c">View Code</a>|

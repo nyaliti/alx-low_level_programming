@@ -1,0 +1,4 @@
+#!/bin/bash
+git add .
+git commit -m'codes with this message were pushed using a script'
+git push

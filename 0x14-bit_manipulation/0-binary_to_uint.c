@@ -1,47 +1,33 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * binary_to_uint - converts a binary to an unsigned int
- * @b: the binary number as a string
+ * binary_to_uint - converts a binary number to an unsigned int.
+ * @b: pointer to a string containing a binary number
  *
- * Return: the converted value
+ * Return: unsigned int with decimal value of binsry number, or 0 if error
  */
-unsigned int convert_binary_to_uint(const char *x)
+unsigned int convert_binary_to_uint(const char *b)
 {
-unsigned int decimal = 0;
-int str_len = 0, base = 1;
+	int i = 0;
+	unsigned int num = 0;
 
-if (!check_valid_string(x)) {
-return 0;
-}
+	if (!b)
+		return (0);
 
-for (; x[str_len] != '\0'; str_len++) {}
+	while (b[i] != '\0')
+	{
+		if (b[i] != '0' && b[i] != '1')
+			return (0);
+		i++;
+	}
 
-for (; str_len > 0; str_len--) {
-decimal += ((x[str_len - 1] - '0') * base);
-base *= 2;
-}
-
-return decimal;
-}
-
-/**
- * check_valid_string - checks if a string has only 0's and 1's
- * @b: string to be checked
- *
- * Return: 1 if string is valid, 0 otherwise
- */
-int validate_binary_string(const char *x)
-{
-if (x == NULL) {
-return 0;
-}
-
-for (; *x != '\0'; x++) {
-if (*x != '0' && *x != '1') {
-return 0;
-}
-}
-
-return 1;
+	i = 0;
+	while (b[i] != '\0')
+	{
+		num <<= 1;
+		if (b[i] == '1')
+			num += 1;
+		i++;
+	}
+	return (num);
 }

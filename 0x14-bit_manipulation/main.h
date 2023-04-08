@@ -1,19 +1,24 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _HOLBERTON_H
+#define _HOLBERTON_H
 
-#include <stdlib.h>
-#include <stddef.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <limits.h>
 
+int print_character(char c);
 
-unsigned int convert_binary_to_uint(const char *x);
-int validate_binary_string(const char *x);
-int print_character(char y);
-void display_binary(unsigned long int z);
-int get_bit_at_index(unsigned long int z, unsigned int index);
-int set_bit_at_index(unsigned long int *z, unsigned int index);
-int clear_bit_at_index(unsigned long int *z, unsigned int index);
-unsigned int count_different_bits(unsigned long int z, unsigned long int w);
-int determine_endianness(void);
+unsigned int convert_binary_to_uint(const char *b);
 
+void print_binary_number(unsigned long int n);
+
+int get_bit_value(unsigned long int n, unsigned int index);
+
+int set_bit_value(unsigned long int *n, unsigned int index);
+
+int clear_bit_value(unsigned long int *n, unsigned int index);
+
+unsigned int flip_binary_bits(unsigned long int n, unsigned long int m);
+
+int get_system_endianness(void);
 
 #endif

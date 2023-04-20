@@ -8,22 +8,20 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t number = 0;
-	long int difference;
+    size_t num = 0;
+    long int diff;
 
-	for (; head != NULL; number++)
-	{
-		difference = head - head->next;  // get the difference between the current node address and the next node address
-		printf("[%p] %d\n", (void *)head, head->n); // print the current node's address and value
-		if (difference > 0)  // if the difference is positive, move to the next node
-			head = head->next;
-		else  // if the difference is not positive, it means we have encountered a loop in the list
-		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);  // print the address and value of the node where the loop was detected
-			break;
-		}
-	}
+    for (; head; head = head->next, num++) {
+        diff = head - head->next; // Calculate the difference between the current node and the next node.
+        printf("[%p] %d\n", (void *)head, head->n); // Print the current node's address and data.
+        if (diff > 0)
+            continue; // If the difference is greater than zero, continue iterating through the list.
+        else {
+            printf("-> [%p] %d\n", (void *)head->next, head->next->n); // Otherwise, print the next node's address and data.
+            break; // Stop iterating through the list.
+        }
+    }
 
-	return (number);  // return the number of nodes in the list
+    return (num);
 }
 

@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 git add .
 git commit -m'updated 0x14-bit_manipulation'
 git push
